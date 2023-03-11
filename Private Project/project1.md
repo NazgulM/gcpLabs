@@ -79,20 +79,18 @@ curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "https:
       "rpo": "DEFAULT"
     }
   ]
-}```
+}
+```
 
 So if I want to work more secure I can delete the default my-network routes, I only can curl to my storage-endpoint1
 
 Curling the bucket information:
 
 ```
-
 curl -X GET -H "Authorization: Bearer $(gcloud auth print-access-token)" "<https://storage-endpoint1.p.googleapis.com/storage/v1/b?project=$(gcloud> config get-value project)"
-
 ```
 
 ```
-
 {
   "kind": "storage#buckets",
   "items": [
@@ -131,6 +129,7 @@ Curl almost the same command as ping, can you reach the host, what exactly it sh
 
 ```
 
+```
 <https://storage-endpoint1.p.googleapis.com/storage/v1/b?project=$(gcloud> config get-value project)
 
 ```
