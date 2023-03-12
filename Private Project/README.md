@@ -130,6 +130,7 @@ Curl almost the same command as ping, can you reach the host, what exactly it sh
 ```
 
 ```
+
 <https://storage-endpoint1.p.googleapis.com/storage/v1/b?project=$(gcloud> config get-value project)
 
 ```

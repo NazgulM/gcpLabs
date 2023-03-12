@@ -45,7 +45,6 @@ vm -1 - 10.2.0.2 (10.0.0.0/8) Number of the first bits except 10, all three bits
 
 ![vm2](2.png)
 
-
 Test the project1 -> Compute engine -> vm-1 -> SSH -> it can connect to the my vm
 
 We have created VPC peering between vpc-1 to vpc -2 , and two vms can connect to each other, along with the correct firewalls, taking the cable plugin to one vm to another.
@@ -56,7 +55,6 @@ Go to project2 -> Click to the Memorystore -> Google Cloud Memorystore for Redis
 Create instance -> instance ID -redis -> Tier Selection -> Basic -> leave default -> network -> vpc-2 -> Create instance.
 
 ![redis](redis.png)
-
 
 For ssh create firewall instance for project2, which we did earlier for project1
 
@@ -84,7 +82,7 @@ But VPC peering didn't give the chance to connect to the redis from vpc1 -> beca
 
 Solution: Create the proxy
  project2 -> Compute engine-> name -> redis-proxy -> choose the region -> us-central1 -> create
-ssh to redis-proxy 
+ssh to redis-proxy
 Get use the running apt update command
 
 ```
@@ -97,21 +95,23 @@ redis-1:
  servers:
  - [REDIS-1 IP]:6379:1
 ```
+
 Nutcracker package that allows to manage proxy
-Anything can talk with redis 
+Anything can talk with redis
 Within the [REDIS-1] paste the endpoint of the redis
 
 ```
 sudo nutcracker --conf-file nutcracker.yaml
 ```
-Proxy is running in the environment on the backend, we will never see.
 
+Proxy is running in the environment on the backend, we will never see.
 
 For connecting to the redis:
 
 ```
 redis-cli -h 10.2.0.3 
 ```
+
 Now , vm1 connected to the redis database
 Vm1 can talk to redis database server using the nutcracker package.
 
@@ -127,5 +127,4 @@ redis-1:
 
 Proxy -> number of Nurjamal-> but I don't have the number of Nursultan -> so proxy in this case is Nurjamal -> connector she can call Nursultan to have a conference call, so i can have the connection with Nursultan, same thing with vms.
 
-Basically can do VPC peering without doing the VPC peering through the Proxy. 
-
+Basically can do VPC peering without doing the VPC peering through the Proxy.
